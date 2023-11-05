@@ -40,7 +40,7 @@ plt.text(similarity_bb, 0, similarity_bb.round(5), fontsize=8, bbox=bbox)
 plot.savefig(os.path.join(picture_path, ('toxicity_difference' + ".png")))
 plt.clf()
 
-
+### evaluate toxicity
 df = pd.read_csv(pred_path, sep='\t')
 
 toxicity = evaluate.load("toxicity", module_type="measurement")
@@ -59,10 +59,12 @@ df_predict = pd.DataFrame({"tox": df["predict_tox"],
                        "label": pd.Series(["predict"] * df["predict_tox"].shape[0])})
 df_scores = pd.concat([df_ref, df_trn, df_predict]).reset_index(drop=True)
 
+### plot compared distribution of ref toxicity, target toxicity and predictid toxicity
 plot = sns.displot(data=df_scores, x="tox", hue="label")
 plot.savefig(os.path.join(picture_path, ('toxicity_prediction' + ".png")))
 plt.clf()
 
-sns.displot(x=pd.Series(trn_tox)-df['predict_tox'], alpha=0.5, linewidth=0.3)
+### plot of distribution
+plot = sns.displot(x=pd.Series(trn_tox)-df['predict_tox'], alpha=0.5, linewidth=0.3)
 plot.savefig(os.path.join(picture_path, ('prediction_target_difference' + ".png")))
 plt.clf()

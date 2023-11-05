@@ -20,4 +20,4 @@ For evaluation I decided to compare toxicity metric for predicted sentences. Sin
 ![""](figures/toxicity_prediction.png)
 From plot we can see that distribution of predictid toxicity and original is quite similar and The peek is near 0.
 ![""](figures/prediction_target_difference.png)
-And from plot of difference of target and prediction we can see that results are good
+And from plot of difference of target and prediction we can see that difference beetween tham in most cases is small.
