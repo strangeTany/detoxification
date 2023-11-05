@@ -1,0 +1,8 @@
+notebooks/cache_dir
+notebooks/outputs
+notebooks/runs
+.idea/.gitignore
+.idea/detoxification.iml
+.idea/misc.xml
+.idea/modules.xml
+.idea/vcs.xml
